@@ -12,7 +12,6 @@ function App() {
     getData();
     // eslint-disable-next-line
   }, []);
-  console.log(results);
 
   const getData = async () => {
     setLoading(true);
