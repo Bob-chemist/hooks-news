@@ -1,6 +1,6 @@
 # Маленькое поисковое приложение "Hooks News"
 
-## [Hooks News](https://puzzle-c0619.firebaseapp.com/ 'Hooks News')
+## [Hooks News](https://hooks-news.firebaseapp.com/ 'Hooks News')
 
 ### Использованы
 

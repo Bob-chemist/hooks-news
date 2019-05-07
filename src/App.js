@@ -17,7 +17,7 @@ function App() {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://hn.algolia.com/api/v1/search?query=${query}`
+        `https://hn.algolia.com/api/v1/search?query=${query}`
       );
       setResults(response.data.hits);
       setError(null);
@@ -68,19 +68,21 @@ function App() {
         <p className="font-bold text-orange-dark">loading</p>
       ) : (
         <ul className="list-reset leading-normal">
-          {results.map(item => {
-            return (
-              <li key={item.objectID}>
-                <a
-                  href={item.url}
-                  className="text-indigo-dark
+          {results
+            .filter(item => item.url)
+            .map(item => {
+              return (
+                <li key={item.objectID}>
+                  <a
+                    href={item.url}
+                    className="text-indigo-dark
                   hover:text-indigo-darkest"
-                >
-                  {item.title}
-                </a>
-              </li>
-            );
-          })}
+                  >
+                    {item.title}
+                  </a>
+                </li>
+              );
+            })}
         </ul>
       )}
       {error && <div className="text-red font-bold">{error.message}</div>}
